@@ -26,3 +26,27 @@ do
 	  fi
 echo "total heads are :" $heads "total tails are :" $tails
 done
+#usecase-3
+while [ $flips -le 42 ]
+do
+     ((flips++))
+     if [ $((RANDOM%2)) -eq 1 ]
+     then
+        echo "heads wins"
+        ((heads++))
+     else
+        echo "tails wins"
+        ((tails++))
+     fi
+	  if [ $heads -eq 21 ]
+	  then
+			echo "heads wins 21 times"
+			exit
+		elif [ $tails -eq 21 ]
+		then
+			echo "tails wins 21 taims"
+			exit
+		else
+			continue
+		fi
+done
