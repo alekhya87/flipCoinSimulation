@@ -9,3 +9,20 @@ then
 else
 	echo "Tail is Winner"
 fi
+#useCase-2
+flips=1
+heads=0
+tails=0 
+while [ $flips -le 20 ]
+do
+     ((flips++))
+     if [ $((RANDOM%2)) -eq 1 ]
+     then   
+		  echo "heads wins"
+        ((heads++))
+     else   
+		  echo "tails wins"
+        ((tails++))
+	  fi
+echo "total heads are :" $heads "total tails are :" $tails
+done
