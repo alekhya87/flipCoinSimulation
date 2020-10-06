@@ -46,9 +46,18 @@ do
 		then
 			echo "tails wins by "$tails" times"
 			exit
-		elif [ $heads -eq 21 && $tails -eq 21 ]
+		elif [ $heads -eq 21 -a $tails -eq 21 ]
 		then
 			echo "both heads and tails are tie"
+			#usercase4
+			if [ $((RANDOM%2)) -eq 1 ]
+			then
+				((heads++))
+				echo "heads wins by"$heads
+			else
+				((tails++))
+				echo "tails wins by"$tails
+			fi
 			exit
 		else
 			continue
