@@ -29,22 +29,26 @@ done
 #usecase-3
 while [ $flips -le 42 ]
 do
-     ((flips++))
-     if [ $((RANDOM%2)) -eq 1 ]
-     then
-        echo "heads wins"
-        ((heads++))
-     else
-        echo "tails wins"
-        ((tails++))
-     fi
-	  if [ $heads -eq 21 ]
-	  then
-			echo "heads wins 21 times"
+   	((flips++))
+   	if [ $((RANDOM%2)) -eq 1 ]
+   	then
+			echo "heads wins"
+      	((heads++))
+   	else
+     		echo "tails wins"
+      	((tails++))
+   	fi
+		if [ $heads -eq 21 ]
+		then
+			echo "heads wins by "$heads" times" 
 			exit
 		elif [ $tails -eq 21 ]
 		then
-			echo "tails wins 21 taims"
+			echo "tails wins by "$tails" times"
+			exit
+		elif [ $heads -eq 21 && $tails -eq 21 ]
+		then
+			echo "both heads and tails are tie"
 			exit
 		else
 			continue
